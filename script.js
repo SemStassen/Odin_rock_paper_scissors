@@ -1,4 +1,5 @@
-
+let computerSelection = computerPlay();
+let playerSelection = userPlay();
 
 //computerplay
 function computerPlay() {
@@ -17,5 +18,72 @@ function computerPlay() {
     }
 }
 
-let computerSelection = computerPlay();
-console.log(computerSelection)
+function userPlay() {
+    //ask the user for a choice
+    let userChoice = prompt("Rock, Paper, or Scissors")
+    if (userChoice.toLowerCase() == "rock") {
+        return "Rock"
+    } else if (userChoice.toLowerCase() == "paper") {
+        return "Paper"
+    } else if (userChoice.toLowerCase() == "scissors") {
+        return "Scissors"
+    } else (
+        alert("that's not an option")
+    )
+}
+
+
+
+
+function playRound(computerSelection, playerSelection) {
+    if (playerSelection == computerSelection) {
+        return "It's a tie! Both players chose " + playerSelection 
+    } 
+
+    //rock
+    if (playerSelection == "Rock") {
+        if (computerSelection == "Paper") {
+            return "You lose. " + computerSelection + ' beats ' + playerSelection
+        } else {
+            return "you win! " + playerSelection + " beats " + computerSelection
+        }
+
+        //paper
+    } else if (playerSelection == "Paper") {
+        if (computerSelection == "Scissors") {
+            return "You lose. " + computerSelection + ' beats ' + playerSelection
+        } else {
+            return "you win! " + playerSelection + " beats " + computerSelection
+        }
+
+        //scissors
+    } else {
+        if (computerSelection == "Rock") {
+            return "You lose. " + computerSelection + ' beats ' + playerSelection
+        } else {
+            return "you win! " + playerSelection + " beats " + computerSelection
+        }
+    }
+}
+
+console.log(playRound(computerSelection, playerSelection))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

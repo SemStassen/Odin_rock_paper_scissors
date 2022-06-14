@@ -68,8 +68,8 @@ let playerScore = 0
 let computerScore = 0
 let round = 1
 const score = document.querySelector(".score")
-const roundInfo = document.querySelector(".roundResult")
-const roundCounter = document.querySelector(".roundCounter")
+const roundInfo = document.querySelector(".roundResult h3")
+const roundCounter = document.querySelector(".roundCounter h3")
 
 //changing hud based on the round result
 function game(playerPick) {
@@ -78,4 +78,5 @@ function game(playerPick) {
    score.textContent = `${playerScore} - ${computerScore}`
    roundInfo.textContent = `${roundResult}` 
    roundCounter.textContent = `Round ${round}`
+ 
 }

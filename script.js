@@ -5,7 +5,7 @@ function computerPlay() {
     // 2 = paper
     // 3 = scissors
 
-    let randomNumber = Math.floor(Math.random() * 3) + 1
+    const randomNumber = Math.floor(Math.random() * 3) + 1
     if (randomNumber == 1) {
         return "rock"
     } else if (randomNumber == 2) {
@@ -20,7 +20,6 @@ function userPlay() {
     let userChoice = prompt("Rock, Paper, or Scissors")
     //checking if userChoice is a valid option, else ask them again
     if (userChoice.toLowerCase() == "paper" || userChoice.toLowerCase() == "rock" || userChoice.toLowerCase() == "scissors") {
-        console.log("test")
         return userChoice.toLowerCase();
     } else {
         alert("Invalid choice!")

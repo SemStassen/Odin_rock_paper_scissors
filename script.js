@@ -1,4 +1,15 @@
-//computerplay
+//adding eventListeners to rps buttons
+const rpsButtons = document.querySelectorAll('button')
+rpsButtons.forEach(button => {
+    button.addEventListener('click', userPlay)
+});
+
+// playing round when button is pressed
+function userPlay() {
+    game(this.id)
+}
+
+//computerPlay
 function computerPlay() {
     // generate a number between 1 and 3 which represents:
     // 1 = rock
@@ -15,19 +26,7 @@ function computerPlay() {
     }
 }
 
-function userPlay() {
-    //ask the user for a choice
-    let userChoice = prompt("Rock, Paper, or Scissors")
-    //checking if userChoice is a valid option, else ask them again
-    if (userChoice.toLowerCase() == "paper" || userChoice.toLowerCase() == "rock" || userChoice.toLowerCase() == "scissors") {
-        return userChoice.toLowerCase();
-    } else {
-        alert("Invalid choice!")
-        userPlay();
-    }
-    
-}
-
+//logic for checking who wins
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return "It's a tie! Both players chose " + playerSelection 
@@ -61,27 +60,22 @@ function playRound(playerSelection, computerSelection) {
             playerScore++;
             return "you win! " + playerSelection + " beats " + computerSelection
         }
-    } else {
-        return "You cancelled the round"
-    }
+    } 
 }
+
+//defining playerScore and hud element selectors
 let playerScore = 0
 let computerScore = 0
+let round = 1
+const score = document.querySelector(".score")
+const roundInfo = document.querySelector(".roundResult")
+const roundCounter = document.querySelector(".roundCounter")
 
-function game() {
-    for (i = 0; i < 5; i++) {
-        const computerSelection = computerPlay();
-        const playerSelection = userPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-
-    if (playerScore > computerScore) {
-        console.log(`You won! Final score ${playerScore} - ${computerScore}`)
-    } else if (computerScore > playerScore) {
-        console.log(`You lose ): Final score ${playerScore} - ${computerScore}`)
-    } else {
-        console.log(`It's a tie. Final score ${playerScore} - ${computerScore}`)
-    }
+//changing hud based on the round result
+function game(playerPick) {
+   roundResult = playRound(playerPick, computerPlay())
+   round++
+   score.textContent = `${playerScore} - ${computerScore}`
+   roundInfo.textContent = `${roundResult}` 
+   roundCounter.textContent = `Round ${round}`
 }
-
-game();

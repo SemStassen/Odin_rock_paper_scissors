@@ -1,0 +1,108 @@
+html {font-size: 1vh;}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    background-color: rgb(158, 177, 177);
+}
+
+header {
+   height: 15%;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    background-color: aliceblue;
+    font-family: inherit;
+}
+
+.playerCont {
+   display: flex;
+    height: 15%;
+    text-align: center;
+    align-items: center;
+}
+
+.playerCont h2 {
+    font-size: 6rem;
+    width: 40%;
+}
+
+.score {
+    font-size: 10rem;
+    width: 20%;
+}
+
+.roundCounter {
+    height: 10%;
+    font-size: 4rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.roundResult {
+    height: 10%;
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.disclaimer {
+    height: 10%;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+   height: 17%;
+   margin-bottom: 3%;
+   width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    
+}
+
+button {
+    width: 12%;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 5%;
+    
+    
+}
+
+#rock {
+    background-image: url(assets/rock.svg);
+}
+
+#paper {
+    background-image: url(assets/paper.svg);
+}
+
+#scissors {
+    background-image: url(assets/scissors.svg);
+}
+
+footer {
+    font-size: 3rem;
+    height: 10%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* height 10 20 10 20 20 15
+80 */
